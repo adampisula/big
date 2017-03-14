@@ -1,0 +1,7 @@
+/home/adampisula/Projects/Big/Big/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
+/home/adampisula/Projects/Big/Big/bin/Debug/Big.dll.mdb
+/home/adampisula/Projects/Big/Big/bin/Debug/Big.pdb
+/home/adampisula/Projects/Big/Big/bin/Debug/Big.dll
+/home/adampisula/Projects/Big/Big/obj/Debug/Big.dll
+/home/adampisula/Projects/Big/Big/obj/Debug/Big.dll.mdb
+/home/adampisula/Projects/Big/Big/obj/Debug/Big.pdb

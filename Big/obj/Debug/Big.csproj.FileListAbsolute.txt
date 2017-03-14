@@ -1,0 +1,5 @@
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\Big\Big\bin\Debug\Big.dll
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\Big\Big\bin\Debug\Big.pdb
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\Big\Big\obj\Debug\Big.csprojResolveAssemblyReference.cache
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\Big\Big\obj\Debug\Big.dll
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\Big\Big\obj\Debug\Big.pdb
