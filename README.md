@@ -6,15 +6,24 @@ Library for C#. It allows you operating on infinitely (actually maximum LENGTH o
 THE LIBRARY STILL HAS A LARGE AMOUNT OF BUGS. If you want to help me developing this lib please contact me at adam.pisula@outlook.com
 
 # Usage  
-`Big a = new Big(10);  
-Big b = new Big("5");  
-Big c = a + b; //ADDING  
-c = a - b; //SUBTRACTING  
-c = a * b; //MULTIPLYING  
-c = Big.Factorial(a) + Big.Factorial(b); //FACTORIAL  
-c = a ^ b; //POWER`  
+`Big a = new Big(10);    
+
+Big b = new Big("5");     
+
+Big c = a + b; //ADDING    
+
+c = a - b; //SUBTRACTING    
+
+c = a * b; //MULTIPLYING     
+
+c = Big.Factorial(a) + Big.Factorial(b); //FACTORIAL     
+
+c = a ^ b; //POWER`    
+
 
 Library also supports RPN:  
-`string a = Console.ReadLine();  
-string rpn = Big.ParseRPN(a);  
-Big calc = Big.CalcRPN(rpn);`
+`string a = Console.ReadLine();       
+
+string rpn = Big.ParseRPN(a);     
+
+Big calc = Big.CalcRPN(rpn);`    
