@@ -1,97 +1,95 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BigStr
 {
     public class Big
     {
-        public string value = "0";
+        public string Value = "0";
 
         //CONSTRUCTORS
         public Big(string val)
         {
             if (IsNumeric(val))
-                value = val;
+                Value = val;
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(byte val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(sbyte val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(short val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(ushort val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(int val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(uint val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(long val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(ulong val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(float val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(double val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
         public Big(decimal val)
         {
             if (IsNumeric(val.ToString()))
-                value = val.ToString();
+                Value = val.ToString();
             else
                 throw new System.ArgumentException("Parameter is not a number!", "original");
         }
@@ -99,7 +97,7 @@ namespace BigStr
         //METHODS
         private static Big Subtract(Big b1, Big b2)
         {
-            return Subtract(b1.value, b2.value);
+            return Subtract(b1.Value, b2.Value);
         }
         private static Big Subtract(string n1, string n2)
         {
@@ -114,20 +112,20 @@ namespace BigStr
 
             if (IsNegative(n1) == true && IsNegative(n2) == false)
             {
-                n1 = Negate(n1).value;
+                n1 = Negate(n1).Value;
 
                 return Negate(Add(n2, n1));
             }
             else if (IsNegative(n1) == false && IsNegative(n2) == true)
             {
-                n2 = Negate(n2).value;
+                n2 = Negate(n2).Value;
 
                 return Add(n1, n2);
             }
             else if (IsNegative(n1) == true && IsNegative(n2) == true)
             {
-                n1 = Negate(n1).value;
-                n2 = Negate(n2).value;
+                n1 = Negate(n1).Value;
+                n2 = Negate(n2).Value;
 
                 return (Compare(n2, n1) == 0) ? Subtract(n2, n1) : Negate(Subtract(n1, n2));
             }
@@ -211,7 +209,7 @@ namespace BigStr
 
         private static Big Add(Big b1, Big b2)
         {
-            return Add(b1.value, b2.value);
+            return Add(b1.Value, b2.Value);
         }
         private static Big Add(string a, string b)
         {
@@ -224,21 +222,21 @@ namespace BigStr
 
             if (IsNegative(a) == true && IsNegative(b) == false)
             {
-                a = Negate(a).value;
+                a = Negate(a).Value;
 
                 return (Compare(a, b) == 0) ? Negate(Subtract(a, b)) : Subtract(b, a);
             }
             else if (IsNegative(a) == false && IsNegative(b) == true)
             {
-                b = Negate(b).value;
+                b = Negate(b).Value;
 
                 return (Compare(b, a) == 0) ? Negate(Subtract(b, a)) : Subtract(a, b);
 
             }
             else if (IsNegative(b) == true && IsNegative(b) == true)
             {
-                a = Negate(a).value;
-                b = Negate(b).value;
+                a = Negate(a).Value;
+                b = Negate(b).Value;
 
                 toneg = true;
             }
@@ -278,16 +276,16 @@ namespace BigStr
 
         private static Big Multiply(Big a, Big b)
         {
-            return Multiply(a.value, b.value);
+            return Multiply(a.Value, b.Value);
         }
         private static Big Multiply(string a, string b)
         {
             if ((IsNegative(a) == true && IsNegative(b) == false) || (IsNegative(a) == false && IsNegative(b) == true))
-                return (IsNegative(a) == true) ? Negate(Multiply(Negate(a).value, b)) : Negate(Multiply(a, Negate(b).value));
+                return (IsNegative(a) == true) ? Negate(Multiply(Negate(a).Value, b)) : Negate(Multiply(a, Negate(b).Value));
             else if (IsNegative(a) == true && IsNegative(b) == true)
             {
-                a = Negate(a).value;
-                b = Negate(b).value;
+                a = Negate(a).Value;
+                b = Negate(b).Value;
             }
 
             int ac = 0;
@@ -317,12 +315,12 @@ namespace BigStr
 
                 buff += s.ToString();
 
-                resin = Reverse(buff).value;
+                resin = Reverse(buff).Value;
 
                 for (int k = 0; k < bl - i; k++)
                     resin += '0';
 
-                res = Add(res, resin).value;
+                res = Add(res, resin).Value;
             }
 
             return TrimZero(res);
@@ -330,30 +328,33 @@ namespace BigStr
 
         public static Big Factorial(Big b)
         {
-            return Factorial(b.value);
+            return Factorial(b.Value);
         }
         public static Big Factorial(string a)
         {
+			Big ab = new Big (a);
+			Big abplusone = ab + "1";
+
             if (Compare(a, "1") != 0)
                 return new Big(1);
 
             string result = "1";
 
-            for (Big i = new Big(1); i < a + "1"; i++)
-                result = (result * i).value;
+            for (Big i = new Big(1); i < abplusone; i++)
+                result = (result * i).Value;
 
             return TrimZero(result);
         }
 
         private static Big Power(Big a, Big b)
         {
-            return Power(a.value, b.value);
+            return Power(a.Value, b.Value);
         }
         private static Big Power(string a, string b)
         {
             Big result = new Big(1);
 
-            for (Big i = new Big(1); i < b; i++)
+            for (Big i = new Big(1); i <= b; i++)
                 result = result * a;
 
             return TrimZero(result);
@@ -361,7 +362,7 @@ namespace BigStr
 
         public static Big SquareRoot(Big s, Big ac)
         {
-            return SquareRoot(s.value, ac.value);
+            return SquareRoot(s.Value, ac.Value);
         }
         public static Big SquareRoot(string s, string ac = "5")
         {
@@ -399,7 +400,7 @@ namespace BigStr
             if (pairs.Length == 1)
                 return new Big(output);
 
-            buff = (new Big(pairs[0]) - (n ^ "2")).value;
+            buff = (new Big(pairs[0]) - (n ^ "2")).Value;
 
             Big k = new Big(0);
             Big pairslength = new Big(pairs.Length);
@@ -409,88 +410,80 @@ namespace BigStr
                 if (i == pairslength - a)
                     c = i;
 
-                buff += pairs[Convert.ToInt32(i.value)];
+                buff += pairs[Convert.ToInt32(i.Value)];
                 string q = "";
                 string m = "";
 
-                for (k.value = "9"; k >= "0"; k--)
+                for (k.Value = "9"; k >= "0"; k--)
                 {
-                    m = (new Big(output) * "2").value + k.ToString();
-                    q = (m * k).value;
+                    m = (new Big(output) * "2").Value + k.ToString();
+                    q = (m * k).Value;
 
                     if (Compare(q, buff) != 0)
                         break;
                 }
 
-                buff = (new Big(buff) - q).value;
+                buff = (new Big(buff) - q).Value;
                 output += k.ToString();
             }
 
-            output = output.Insert(Convert.ToInt32(c.value), ".");
+            output = output.Insert(Convert.ToInt32(c.Value), ".");
 
             return TrimZero(output);
+			//return output;
         }
 
-        private static Big TrimZero(Big b)
+        public static Big TrimZero(Big b)
         {
-            return TrimZero(b.value);
+            return TrimZero(b.Value);
         }
-        private static Big TrimZero(string a)
+		public static Big TrimZero(string a)
+		{
+			bool aisneg = IsNegative(a);
+			bool f = IsFloat(a);
+
+			a = (aisneg) ? Negate (a).Value : a;
+
+			StringBuilder asb = new StringBuilder(a);
+			int i = 0;
+
+			for (i = 0; i < asb.Length; i++)
+			{
+				if (asb[i] == '0')
+					continue;
+				else
+					break;
+			}
+
+			if (i == asb.Length)
+				return new BigStr.Big("0");
+
+			asb = asb.Remove(0, i);
+
+			if (f)
+			{
+				int j = 0;
+
+				for (j = asb.Length - 1; j >= 0; j--)
+				{
+					if (asb[j] == '.' || asb[j] != '0')
+						break;
+					else
+						asb = asb.Remove(asb.Length - 1, 1);
+				}
+			}
+
+			if(asb[asb.Length - 1] == '.')
+				asb = asb.Remove(asb.Length - 1, 1);
+
+			return (aisneg) ? Negate(asb.ToString()) : new Big(asb.ToString());
+		}
+
+        public static Big Negate(Big b)
         {
-            bool aisneg = false;
-            bool f = false;
-
-            for (int k = 0; k < a.Length; k++)
-            {
-                if (a[k] == '.')
-                    f = true;
-            }
-
-            if (a[0] == '-')
-            {
-                aisneg = true;
-                a = Negate(a).value;
-            }
-            else
-                aisneg = false;
-
-            StringBuilder asb = new StringBuilder(a);
-            int i = 0;
-
-            for (i = 0; i < asb.Length; i++)
-            {
-                if (asb[i] == '0')
-                    continue;
-                else
-                    break;
-            }
-
-            if (i == asb.Length)
-                return new BigStr.Big("0");
-
-            asb = asb.Remove(0, i);
-
-            if (f == true)
-            {
-                int j = 0;
-
-                for (j = asb.Length - 1; j >= 0; j--)
-                {
-                    if (asb[j] != '.' && asb[j] != '0')
-                        break;
-                    else
-                        asb = asb.Remove(asb.Length - 1, 1);
-                }
-            }
-
-            return (aisneg) ? Negate(asb.ToString()) : new Big(asb.ToString());
+            return Negate(b.Value);
         }
-
-        private static Big Negate(Big b)
-        {
-            return Negate(b.value);
-        }
-        private static Big Negate(string a)
+        public static Big Negate(string a)
         {
             if (a == "0" || a == "-0")
                 return new BigStr.Big("0");
@@ -502,7 +495,7 @@ namespace BigStr
 
         private static Big Reverse(Big b)
         {
-            return Reverse(b.value);
+            return Reverse(b.Value);
         }
         private static Big Reverse(string s)
         {
@@ -513,7 +506,7 @@ namespace BigStr
 
         private static int Compare(Big b1, Big b2)
         {
-            return Compare(b1.value, b2.value);
+            return Compare(b1.Value, b2.Value);
         }
         private static int Compare(string n1, string n2)
         {
@@ -528,11 +521,11 @@ namespace BigStr
 
             if (n1.Length > n2.Length)
             {
-                n2 = (IsNegative(n2) == false) ? new String('0', n1.Length - n2.Length) + n2 : Negate(new String('0', n1.Length - n2.Length) + Negate(n2).value).value;
+                n2 = (IsNegative(n2) == false) ? new String('0', n1.Length - n2.Length) + n2 : Negate(new String('0', n1.Length - n2.Length) + Negate(n2).Value).Value;
             }
             else if (n1.Length < n2.Length)
             {
-                n1 = (IsNegative(n1) == false) ? new String('0', n2.Length - n1.Length) + n1 : Negate(new String('0', n2.Length - n1.Length) + Negate(n1).value).value;
+                n1 = (IsNegative(n1) == false) ? new String('0', n2.Length - n1.Length) + n1 : Negate(new String('0', n2.Length - n1.Length) + Negate(n1).Value).Value;
             }
 
             int i = (IsNegative(n1) && IsNegative(n2)) ? 1 : 0;
@@ -557,7 +550,7 @@ namespace BigStr
 
         public static bool IsNumeric(Big b)
         {
-            return IsNumeric(b.value);
+            return IsNumeric(b.Value);
         }
         public static bool IsNumeric(string s)
         {
@@ -580,11 +573,11 @@ namespace BigStr
             return ((i == s.Length - 1 && IsNegative(s)) || (i == s.Length)) ? true : false;
         }
 
-        private static bool IsNegative(Big b)
+		public static bool IsNegative(Big b)
         {
-            return IsNegative(b.value);
+            return IsNegative(b.Value);
         }
-        private static bool IsNegative(string a)
+        public static bool IsNegative(string a)
         {
             if (a[0] == '-')
                 return true;
@@ -617,12 +610,12 @@ namespace BigStr
 					b = stack.Pop().ToString();
 					a = stack.Pop().ToString();
 
-					if (el == "^") w = Power(a, b).value;
-					else if (el == "*") w = Multiply(a, b).value;
-					else if (el == "/") w = (Double.Parse(a) / Double.Parse(a)).ToString();
-					else if (el == "%") w = (Int32.Parse(a) % Int32.Parse(a)).ToString();
-					else if (el == "+") w = Add(a, b).value;
-					else if (el == "-") w = Subtract(a, b).value;
+					if (el == "^") w = Power(a, b).Value;
+					else if (el == "*") w = Multiply(a, b).Value;
+					//else if (el == "/") w = (Double.Parse(a) / Double.Parse(a)).ToString();
+					//else if (el == "%") w = (Int32.Parse(a) % Int32.Parse(a)).ToString();
+					else if (el == "+") w = Add(a, b).Value;
+					else if (el == "-") w = Subtract(a, b).Value;
 
 					stack.Push(w);
 				}               
@@ -635,7 +628,7 @@ namespace BigStr
 
 		public static string ParseRPN(string s, int a = 5)
 		{
-			string[] words = s.Split(' ');
+            string[] words = evalArray(s);
 			Stack<string> stack = new Stack<string>();
 			string el = "";
 			string output = "";
@@ -646,12 +639,12 @@ namespace BigStr
 				if (words[j][words[j].Length - 1] == '!')
 				{
 					words[j] = words[j].Remove(words[j].Length - 1);
-					words[j] = Factorial(words[j]).value;
+					words[j] = Factorial(words[j]).Value;
 				}
 				else if (words[j][0] == '√')
 				{
 					words[j] = words[j].Substring(1);
-					words[j] = SquareRoot(words[j], a.ToString()).value;
+					words[j] = SquareRoot(words[j], a.ToString()).Value;
 				}
 			}
 
@@ -711,7 +704,41 @@ namespace BigStr
 			return (output[output.Length - 1] == ' ') ? output.Remove(output.Length - 1) : output;
 		}
 
-		private static byte Priority(string s)
+        private static string[] evalArray(string expression)
+        {
+            expression = expression.Replace(" ", string.Empty);
+
+            string[] symbols = { "+", "-", "*", "/", "(", ")", "^", "%" };
+
+            List<string> elements = new List<string>();
+            string current = "";
+
+            for (int i = 0; i < expression.Length; i++)
+            {
+                if (Array.IndexOf(symbols, expression[i].ToString()) != -1)
+                {
+                    if (current != "")
+                        elements.Add(current);
+                    elements.Add(expression[i].ToString());
+
+                    current = "";
+                }
+
+                else if (i == expression.Length - 1)
+                {
+                    current += expression[i];
+
+                    elements.Add(current);
+                }
+
+                else
+                    current += expression[i];
+            }
+
+            return elements.ToArray();
+        }
+
+        private static byte Priority(string s)
 		{
 			if (s == "^")
 				return 3;
@@ -723,6 +750,10 @@ namespace BigStr
 				return 0;
 		}
 
+        public static bool IsFloat(Big b)
+        {
+            return IsFloat(b.Value);
+        }
 		public static bool IsFloat(string a)
 		{
 			for (int k = 0; k < a.Length; k++)
@@ -733,6 +764,39 @@ namespace BigStr
 
 			return false;
 		}
+
+        public static bool IsEven(Big b)
+        {
+            return IsEven(b.Value);
+        }
+        public static bool IsEven(string b)
+        {
+            char last = b[b.Length - 1];
+
+            switch(last)
+            {
+                case '0':
+                case '2':
+                case '4':
+                case '6':
+                case '8':
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public static bool IsOdd(Big b)
+        {
+            return IsOdd(b.Value);
+        }
+        public static bool IsOdd(string b)
+        {
+            return !IsEven(b);
+        }
+
+		//GENERATING REPORT
+		//public static void 
 
         //OPERATOR OVERLOADING
         //+
@@ -795,6 +859,6 @@ namespace BigStr
         public static bool operator >=(string b1, Big b2) => (b1 == b2 || b1 > b2) ? true : false;
 
         //TOSTRING
-        public override string ToString() => value;
+        public override string ToString() => Value;
     }
 }
